@@ -14,32 +14,33 @@ export interface Smoothie {
 
 /**
  * ASSET REGISTRY
- * Root-absolute paths (/assets/images/...) are used to ensure correct resolution on Vercel.
+ * Using relative paths (./assets/images/) is the most reliable way to reference
+ * static files in standard Vercel/Vite deployments.
  */
 export const ASSETS = {
   // Brand & UI
-  LOGO: "/assets/images/logo.png", 
-  FAVICON: "/assets/images/favicon.png",
+  LOGO: "./assets/images/logo.png", 
+  FAVICON: "./assets/images/favicon.png",
   
   // Hero Floating Elements
-  DRAGON_FRUIT: "/assets/images/dragonfruit.png",
-  MANGO: "/assets/images/mango.png",
-  LIME: "/assets/images/lime.png",
-  BERRY: "/assets/images/cherry.png", 
-  LITCHI: "/assets/images/litchi.png",
-  PASSION: "/assets/images/passionfruit.png",
+  DRAGON_FRUIT: "./assets/images/dragonfruit.png",
+  MANGO: "./assets/images/mango.png",
+  LIME: "./assets/images/lime.png",
+  BERRY: "./assets/images/cherry.png", 
+  LITCHI: "./assets/images/litchi.png",
+  PASSION: "./assets/images/passionfruit.png",
   
   // Catalog / Showcase Images
-  CATALOG_DRAGON: "/assets/images/catalog-dragon.jpg",
-  CATALOG_MANGO: "/assets/images/catalog-mango..jpg", // Double dot verified
-  CATALOG_BOX: "/assets/images/catalog-box.jpg",
-  CATALOG_YELLOW_PITAYA: "/assets/images/catalog-yellow-pitaya.jpg",
+  CATALOG_DRAGON: "./assets/images/catalog-dragon.jpg",
+  CATALOG_MANGO: "./assets/images/catalog-mango..jpg", // Double dot per your file list
+  CATALOG_BOX: "./assets/images/catalog-box.jpg",
+  CATALOG_YELLOW_PITAYA: "./assets/images/catalog-yellow-pitaya.jpg",
   
   // Fresh Bar Images
-  SMOOTHIE_DRAGON: "/assets/images/smoothie-dragon.jpg",
-  SMOOTHIE_MANGO: "/assets/images/smoothie-mango.jpg",
-  SMOOTHIE_LIME: "/assets/images/smoothie-lime.jpg",
-  SMOOTHIE_BERRY: "/assets/images/smoothie-berry.jpg",
+  SMOOTHIE_DRAGON: "./assets/images/smoothie-dragon.jpg",
+  SMOOTHIE_MANGO: "./assets/images/smoothie-mango.jpg",
+  SMOOTHIE_LIME: "./assets/images/smoothie-lime.jpg",
+  SMOOTHIE_BERRY: "./assets/images/smoothie-berry.jpg",
 };
 
 export const PLACEHOLDERS = {
