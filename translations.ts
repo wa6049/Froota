@@ -1,0 +1,107 @@
+
+export const TRANSLATIONS = {
+  hr: {
+    nav: {
+      home: 'Home',
+      offer: 'Fruit Showcase',
+      freshBar: 'Fresh Bar',
+      delivery: 'Dostava',
+      location: 'Lokacija',
+      wolt: 'Wolt',
+      glovo: 'Glovo',
+    },
+    hero: {
+      location_badge: 'Ozaljska 83, Zagreb',
+      title_main: 'Doživi',
+      title_accent: 'Egzotiku',
+      title_end: 'Uživo.',
+      subtitle: 'Nismo samo market, mi smo tvoja dnevna doza egzotike u srcu Trešnjevke. Dođi i osobno izaberi najslađe plodove prirode.',
+      cta_visit: 'Posjeti Nas',
+      cta_explore: 'Istraži Izlog',
+    },
+    showcase: {
+      badge: 'Digitalni Izlog',
+      title: 'Plodovi Svijeta',
+      subtitle: 'Pažljivo birani, ručno testirani i spremni za tvoj stol. Svaki plod je priča za sebe.',
+      origin: 'Podrijetlo',
+      notes: 'Okusne Note',
+      health: 'Wellness Profil',
+      vitamin_a: 'Vitamin A',
+      vitamin_c: 'Vitamin C',
+      energy: 'Energija',
+      available: 'Dostupno u marketu',
+      seasonal: 'Ovisi o sezoni dozrijevanja',
+    },
+    freshbar: {
+      badge: 'Alkemija Zdravlja',
+      title: 'Fresh Bar Eliksiri',
+      subtitle: 'Nisu samo sokovi. To su hladno prešani rituali pripremljeni pred tvojim očima.',
+      ingredients: 'Glavni sastojci',
+      benefit: 'Glavni Benefit',
+      detox: 'Detoksikacija',
+      energy: 'Energija +',
+      immunity: 'Imunitet',
+      glow: 'Skin Glow',
+      order: 'Naruči Svježe',
+    },
+    footer: {
+      rights: 'Sva prava pridržana.',
+      privacy: 'Privatnost',
+      terms: 'Uvjeti',
+      cookies: 'Kolačići',
+      made_by: 'Premium Fruit Experience • Zagreb 2026'
+    }
+  },
+  en: {
+    nav: {
+      home: 'Home',
+      offer: 'Fruit Showcase',
+      freshBar: 'Fresh Bar',
+      delivery: 'Delivery',
+      location: 'Location',
+      wolt: 'Wolt',
+      glovo: 'Glovo',
+    },
+    hero: {
+      location_badge: 'Ozaljska 83, Zagreb',
+      title_main: 'Experience',
+      title_accent: 'Exoticism',
+      title_end: 'Live.',
+      subtitle: 'We are more than a market; we are your daily dose of exoticism in the heart of Trešnjevka. Come and hand-pick nature\'s gifts.',
+      cta_visit: 'Visit Us',
+      cta_explore: 'Explore Showcase',
+    },
+    showcase: {
+      badge: 'Digital Showcase',
+      title: 'Global Harvest',
+      subtitle: 'Carefully curated, hand-tested, and ready for your table. Every fruit tells a story.',
+      origin: 'Origin',
+      notes: 'Flavor Notes',
+      health: 'Wellness Profile',
+      vitamin_a: 'Vitamin A',
+      vitamin_c: 'Vitamin C',
+      energy: 'Energy',
+      available: 'Available in-store',
+      seasonal: 'Seasonal availability apply',
+    },
+    freshbar: {
+      badge: 'Health Alchemy',
+      title: 'Fresh Bar Elixirs',
+      subtitle: 'Not just juices. These are cold-pressed rituals prepared right before your eyes.',
+      ingredients: 'Key Ingredients',
+      benefit: 'Key Benefit',
+      detox: 'Detoxification',
+      energy: 'Energy +',
+      immunity: 'Immunity',
+      glow: 'Skin Glow',
+      order: 'Order Fresh',
+    },
+    footer: {
+      rights: 'All rights reserved.',
+      privacy: 'Privacy',
+      terms: 'Terms',
+      cookies: 'Cookies',
+      made_by: 'Premium Fruit Experience • Zagreb 2026'
+    }
+  }
+};
