@@ -10,8 +10,21 @@ interface LogoProps {
 const Logo: React.FC<LogoProps> = ({ className = "", iconOnly = false }) => {
   const [imgError, setImgError] = useState(false);
 
-  // Fallback to text/icon logo if image fails or path is missing
-  const renderFallback = () => (
+  if (!imgError && ASSETS.LOGO) {
+    return (
+      <div className={`flex items-center ${className}`}>
+        <img 
+          src={ASSETS.LOGO} 
+          alt="Froota Market" 
+          className="h-11 w-auto object-contain" 
+          style={{ minWidth: iconOnly ? '44px' : 'auto' }}
+          onError={() => setImgError(true)}
+        />
+      </div>
+    );
+  }
+
+  return (
     <div className={`flex items-center gap-3 group ${className}`}>
       <div className="w-11 h-11 bg-froota-dark dark:bg-froota-pink rounded-full flex items-center justify-center text-froota-pink dark:text-froota-dark shadow-lg transition-transform group-hover:scale-110">
          <div className="relative">
@@ -27,25 +40,6 @@ const Logo: React.FC<LogoProps> = ({ className = "", iconOnly = false }) => {
       )}
     </div>
   );
-
-  if (!imgError && ASSETS.LOGO) {
-    return (
-      <div className={`flex items-center ${className}`}>
-        <img 
-          src={ASSETS.LOGO} 
-          alt="Froota Market" 
-          className="h-11 w-auto object-contain" 
-          style={{ minWidth: iconOnly ? '44px' : 'auto' }}
-          onError={() => {
-            console.warn("Logo failed to load:", ASSETS.LOGO);
-            setImgError(true);
-          }}
-        />
-      </div>
-    );
-  }
-
-  return renderFallback();
 };
 
 export default Logo;

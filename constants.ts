@@ -14,7 +14,7 @@ export interface Smoothie {
 
 /**
  * ASSET REGISTRY
- * Root-absolute paths (/assets/images/...) are the most robust for production deployments.
+ * Root-absolute paths (/assets/images/...) are used to ensure correct resolution on Vercel.
  */
 export const ASSETS = {
   // Brand & UI
@@ -31,7 +31,7 @@ export const ASSETS = {
   
   // Catalog / Showcase Images
   CATALOG_DRAGON: "/assets/images/catalog-dragon.jpg",
-  CATALOG_MANGO: "/assets/images/catalog-mango..jpg", // Double dot per user screenshot
+  CATALOG_MANGO: "/assets/images/catalog-mango..jpg", // Double dot verified
   CATALOG_BOX: "/assets/images/catalog-box.jpg",
   CATALOG_YELLOW_PITAYA: "/assets/images/catalog-yellow-pitaya.jpg",
   
