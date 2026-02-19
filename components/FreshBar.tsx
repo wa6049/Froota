@@ -31,7 +31,7 @@ const FreshBar: React.FC = () => {
   return (
     <section 
       id="fresh-bar" 
-      className="py-24 lg:py-48 relative overflow-hidden transition-colors duration-1000 ease-in-out min-h-screen flex items-center"
+      className="py-12 lg:py-24 relative overflow-hidden transition-colors duration-1000 ease-in-out min-h-screen flex items-center"
       style={{ backgroundColor: currentSmoothie.color }}
     >
       {/* Immersive Background Effects */}
@@ -39,6 +39,13 @@ const FreshBar: React.FC = () => {
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1)_0%,transparent_100%)] opacity-30"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+        
+        {/* Mobile Title View */}
+        <div className="lg:hidden mb-12 text-center text-white">
+           <p className="text-[10px] font-black uppercase tracking-[0.5em] opacity-60 mb-2">Fresh Bar Catalog</p>
+           <h2 className="text-4xl font-impact uppercase tracking-tighter">The Smoothie Selection</h2>
+        </div>
+
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-16 lg:gap-32 items-center">
           
           {/* Left Side: Product Focus */}
@@ -65,8 +72,8 @@ const FreshBar: React.FC = () => {
             </div>
 
             {/* Carousel Navigation Overlay */}
-            <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-6 bg-froota-dark/90 backdrop-blur-2xl px-8 py-6 rounded-full border border-white/10 shadow-2xl">
-              <button onClick={handlePrev} className="text-white/60 hover:text-white transition-colors active:scale-90">
+            <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-6 bg-froota-dark/90 backdrop-blur-2xl px-8 py-6 rounded-full border border-white/10 shadow-2xl z-30">
+              <button onClick={handlePrev} className="text-white/60 hover:text-white transition-colors active:scale-90" aria-label="Previous">
                 <ArrowLeft size={24} />
               </button>
               <div className="flex gap-2">
@@ -74,7 +81,7 @@ const FreshBar: React.FC = () => {
                   <button key={i} onClick={() => setActiveIndex(i)} className={`h-1.5 rounded-full transition-all ${activeIndex === i ? 'w-10 bg-froota-pink' : 'w-2 bg-white/20'}`}></button>
                 ))}
               </div>
-              <button onClick={handleNext} className="text-white/60 hover:text-white transition-colors active:scale-90">
+              <button onClick={handleNext} className="text-white/60 hover:text-white transition-colors active:scale-90" aria-label="Next">
                 <ArrowRight size={24} />
               </button>
             </div>
@@ -102,7 +109,7 @@ const FreshBar: React.FC = () => {
             <div className="grid grid-cols-2 gap-10 pt-8 border-t border-current/10">
                <div>
                   <p className="text-[10px] font-black uppercase tracking-widest opacity-40 mb-3">{t('freshbar.ingredients')}</p>
-                  <p className="text-lg font-bold">Pitaja, Đumbir, Limeta, Kokos</p>
+                  <p className="text-lg font-bold">Nature's Best Blends</p>
                </div>
                <div>
                   <p className="text-[10px] font-black uppercase tracking-widest opacity-40 mb-3">{t('freshbar.benefit')}</p>

@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import MenuSection from './components/MenuSection';
@@ -18,8 +18,29 @@ import { FavoritesProvider } from './context/FavoritesContext';
 import { LanguageProvider } from './context/LanguageContext';
 import { ThemeProvider } from './context/ThemeContext';
 
+type View = 'home' | 'products' | 'freshbar';
+
 const App: React.FC = () => {
   const [showSplash, setShowSplash] = useState(true);
+  const [currentView, setCurrentView] = useState<View>('home');
+
+  // Hash-based Router
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#/', '');
+      if (hash === 'products') setCurrentView('products');
+      else if (hash === 'freshbar') setCurrentView('freshbar');
+      else setCurrentView('home');
+      
+      // Scroll to top on view change
+      window.scrollTo(0, 0);
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    handleHashChange(); // Initial check
+
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   return (
     <ThemeProvider>
@@ -31,15 +52,33 @@ const App: React.FC = () => {
             <CustomCursor />
             <PremiumBackground />
             
-            <Navbar />
+            <Navbar currentView={currentView} />
             
             <main className="relative z-10">
-              <Hero />
-              <MenuSection />
-              <HowItWorks />
-              <FreshBar />
-              <Delivery />
-              <Location />
+              {currentView === 'home' && (
+                <div className="animate-in fade-in duration-1000">
+                  <Hero />
+                  <HowItWorks />
+                  <MenuSection />
+                  <FreshBar />
+                  <Delivery />
+                  <Location />
+                </div>
+              )}
+
+              {currentView === 'products' && (
+                <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 pt-20">
+                  <MenuSection />
+                  <Location />
+                </div>
+              )}
+
+              {currentView === 'freshbar' && (
+                <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 pt-20">
+                  <FreshBar />
+                  <Location />
+                </div>
+              )}
             </main>
 
             <Footer />

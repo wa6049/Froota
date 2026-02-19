@@ -1,11 +1,13 @@
 
 import React, { useState, useEffect } from 'react';
+import { ASSETS } from '../constants';
 
 const CustomCursor: React.FC = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [imgError, setImgError] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -51,6 +53,10 @@ const CustomCursor: React.FC = () => {
 
   if (isMobile || !isVisible) return null;
 
+  const cursorImg = (!imgError && ASSETS.DRAGON_FRUIT) 
+    ? ASSETS.DRAGON_FRUIT 
+    : "https://img.icons8.com/color/96/dragon-fruit.png";
+
   return (
     <div 
       className="fixed pointer-events-none z-[9999] flex items-center justify-center will-change-transform"
@@ -67,8 +73,9 @@ const CustomCursor: React.FC = () => {
         }}
       >
         <img 
-          src="https://img.icons8.com/color/96/dragon-fruit.png" 
-          alt="dragonfruit cursor" 
+          src={cursorImg} 
+          alt="cursor" 
+          onError={() => setImgError(true)}
           className="w-11 h-11 drop-shadow-[0_10px_20px_rgba(233,44,108,0.5)]"
         />
       </div>

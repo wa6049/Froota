@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Citrus } from 'lucide-react';
 import { ASSETS } from '../constants';
 
@@ -9,16 +9,23 @@ interface LogoProps {
 }
 
 const Logo: React.FC<LogoProps> = ({ className = "", iconOnly = false }) => {
-  // If ASSETS.LOGO is provided, render the image
-  if (ASSETS.LOGO) {
+  const [imgError, setImgError] = useState(false);
+
+  // If ASSETS.LOGO is provided and hasn't failed to load, render the image
+  if (ASSETS.LOGO && !imgError) {
     return (
       <div className={`flex items-center ${className}`}>
-        <img src={ASSETS.LOGO} alt="Froota Market" className="h-11 w-auto object-contain" />
+        <img 
+          src={ASSETS.LOGO} 
+          alt="Froota Market" 
+          className="h-11 w-auto object-contain" 
+          onError={() => setImgError(true)}
+        />
       </div>
     );
   }
 
-  // Default premium SVG + Text Logo
+  // Default premium SVG + Text Logo (Used if no image is provided or if it fails)
   return (
     <div className={`flex items-center gap-3 group ${className}`}>
       <div className="w-11 h-11 bg-froota-dark dark:bg-froota-pink rounded-full flex items-center justify-center text-froota-pink dark:text-froota-dark shadow-lg shadow-black/10 group-hover:scale-110 transition-transform">

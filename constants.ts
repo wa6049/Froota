@@ -13,22 +13,39 @@ export interface Smoothie {
   textColor: string;
 }
 
-// ASSET PATHS (Update these with your actual files in /assets/images/)
+/**
+ * ASSET DIRECTORY: /assets/images/
+ * Simply drop your files into that folder and rename them to match the strings below.
+ */
 export const ASSETS = {
-  LOGO: "", // If empty, the site uses the dynamic SVG/Text logo in components/Logo.tsx
-  DRAGON_FRUIT: "https://img.icons8.com/plasticine/800/dragon-fruit.png",
-  MANGO: "https://img.icons8.com/plasticine/800/mango.png",
-  LIME: "https://img.icons8.com/plasticine/400/lime.png",
-  // Place your high-res photography in /assets/images/ and update below
-  CATALOG_DRAGON: "https://images.unsplash.com/photo-1527324688101-0bc96a8fa463?auto=format&fit=crop&q=80&w=800",
-  CATALOG_MANGO: "https://images.unsplash.com/photo-1591073113125-e46713c829ed?auto=format&fit=crop&q=80&w=800",
-  CATALOG_BOX: "https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&q=80&w=800",
+  // Brand
+  LOGO: "assets/images/logo.png", 
+  
+  // Hero Floating Elements (Isolated PNGs recommended)
+  DRAGON_FRUIT: "assets/images/dragonfruit.png",
+  MANGO: "assets/images/mango.png",
+  LIME: "assets/images/lime.png",
+  BERRY: "assets/images/berry.png",
+  LITCHI: "assets/images/litchi.png",
+  PASSION: "assets/images/passionfruit.png",
+  
+  // Catalog / Showcase Images (High-res photography)
+  CATALOG_DRAGON: "assets/images/catalog-dragon.jpg",
+  CATALOG_MANGO: "assets/images/catalog-mango.jpg",
+  CATALOG_BOX: "assets/images/catalog-box.jpg",
+  CATALOG_YELLOW_PITAYA: "assets/images/catalog-yellow-pitaya.jpg",
+  
+  // Fresh Bar Images
+  SMOOTHIE_DRAGON: "assets/images/smoothie-dragon.jpg",
+  SMOOTHIE_MANGO: "assets/images/smoothie-mango.jpg",
+  SMOOTHIE_LIME: "assets/images/smoothie-lime.jpg",
+  SMOOTHIE_BERRY: "assets/images/smoothie-berry.jpg",
 };
 
 export const PLACEHOLDERS = {
   PHONE: "+385 1 234 5678",
   EMAIL: "hello@frootamarket.hr",
-  INSTAGRAM_URL: "#",
+  INSTAGRAM_URL: "https://instagram.com/frootamarket",
   TIKTOK_URL: "#",
   WOLT_URL: "#",
   GLOVO_URL: "#",
@@ -82,24 +99,8 @@ export const PRODUCTS: Product[] = [
     name: "Yellow Pitaya",
     description: "Rare Colombian Yellow Pitaya. Extremely sweet crunchy texture.",
     price: "€6.00 / kom",
-    image: "https://images.unsplash.com/photo-1582284540020-8acaf03844e8?auto=format&fit=crop&q=80&w=800",
+    image: ASSETS.CATALOG_YELLOW_PITAYA,
     category: 'exotic'
-  },
-  {
-    id: '5',
-    name: "Berry Punch",
-    description: "Cold-pressed forest berries with a hint of organic lime.",
-    price: "€4.50",
-    image: "https://images.unsplash.com/photo-1600718374662-0483d2b9d40d?auto=format&fit=crop&q=80&w=800",
-    category: 'fresh-bar'
-  },
-  {
-    id: '6',
-    name: "Passion Elixir",
-    description: "100% Passion fruit extract blended for immediate energy boost.",
-    price: "€5.50",
-    image: "https://images.unsplash.com/photo-1594911772125-07fc7a2d8d9f?auto=format&fit=crop&q=80&w=800",
-    category: 'fresh-bar'
   }
 ];
 
@@ -107,11 +108,11 @@ export const SMOOTHIES: Smoothie[] = [
   {
     id: 's1',
     name: 'Dragon Punch',
-    titleMain: 'NATURE\'S POWER',
+    titleMain: "NATURE'S POWER",
     titleAccent: 'IN EVERY',
     titleEnd: 'SIP',
-    description: 'Our Fresh Bar isn\'t just a menu, it\'s a health laboratory. Every smoothie is prepared from fruit you pick yourself.',
-    image: 'https://images.unsplash.com/photo-1594911772125-07fc7a2d8d9f?auto=format&fit=crop&q=80&w=800',
+    description: "Our Fresh Bar isn't just a menu, it's a health laboratory. Every smoothie is prepared from fruit you pick yourself.",
+    image: ASSETS.SMOOTHIE_DRAGON,
     color: '#E92C6C',
     textColor: 'text-white'
   },
@@ -122,7 +123,7 @@ export const SMOOTHIES: Smoothie[] = [
     titleAccent: 'GOLDEN',
     titleEnd: 'ENERGY',
     description: 'Experience the pure Alfonso sweetness. 100% natural, blended to perfection with cold-pressed coconut water.',
-    image: 'https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&q=80&w=800',
+    image: ASSETS.SMOOTHIE_MANGO,
     color: '#FFB800',
     textColor: 'text-froota-dark'
   },
@@ -133,7 +134,7 @@ export const SMOOTHIES: Smoothie[] = [
     titleAccent: 'MINTY',
     titleEnd: 'DETOX',
     description: 'The ultimate refreshment for Trešnjevka runners. Cold-pressed lime and mint to restart your system.',
-    image: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&q=80&w=800',
+    image: ASSETS.SMOOTHIE_LIME,
     color: '#97C02D',
     textColor: 'text-froota-dark'
   },
@@ -144,7 +145,7 @@ export const SMOOTHIES: Smoothie[] = [
     titleAccent: 'ANTIOXIDANT',
     titleEnd: 'BOOST',
     description: 'Dark, rich, and full of vitamins. Local forest berries mixed with exotic pomegranate for immune support.',
-    image: 'https://images.unsplash.com/photo-1600718374662-0483d2b9d40d?auto=format&fit=crop&q=80&w=800',
+    image: ASSETS.SMOOTHIE_BERRY,
     color: '#4C1D95',
     textColor: 'text-white'
   }
