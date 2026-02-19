@@ -17,7 +17,7 @@ export const TRANSLATIONS = {
       title_end: 'Uživo.',
       subtitle: 'Nismo samo market, mi smo tvoja dnevna doza egzotike u srcu Trešnjevke. Dođi i osobno izaberi najslađe plodove prirode.',
       cta_visit: 'Posjeti Nas',
-      cta_explore: 'Pogledaj Ponudu',
+      cta_explore: 'Svi Proizvodi',
     },
     howItWorks: {
       badge: 'Naš Proces',
@@ -34,9 +34,9 @@ export const TRANSLATIONS = {
       cta: 'Pronađi nas na mapi'
     },
     showcase: {
-      badge: 'Katalog Proizvoda',
+      badge: 'Premium Katalog',
       title: 'Naši Proizvodi',
-      subtitle: 'Pažljivo birani, ručno testirani i spremni za tvoj stol. Otkrij bogatstvo okusa u našem marketu.',
+      subtitle: 'Pažljivo birani, ručno testirani i spremni za tvoj stol. Svaki plod je priča za sebe.',
       all: 'Sve',
       exotic: 'Egzotično Voće',
       platters: 'Plate & Boxevi',
@@ -139,9 +139,9 @@ export const TRANSLATIONS = {
       cta: 'Find us on the map'
     },
     showcase: {
-      badge: 'Product Catalog',
+      badge: 'Premium Catalog',
       title: 'Our Products',
-      subtitle: 'Carefully curated, hand-tested, and ready for your table. Discover the wealth of flavors in our market.',
+      subtitle: 'Carefully curated, hand-tested, and ready for your table. Every fruit tells its own story.',
       all: 'All',
       exotic: 'Exotic Fruit',
       platters: 'Platters & Boxes',

@@ -1,4 +1,3 @@
-
 import { BusinessInfo, Product } from './types';
 
 export interface Smoothie {
@@ -14,32 +13,33 @@ export interface Smoothie {
 }
 
 /**
- * ASSET DIRECTORY: /assets/images/
- * Simply drop your files into that folder and rename them to match the strings below.
+ * ASSET REGISTRY
+ * Root-absolute paths (/assets/images/...) are the most robust for production deployments.
  */
 export const ASSETS = {
-  // Brand
-  LOGO: "assets/images/logo.png", 
+  // Brand & UI
+  LOGO: "/assets/images/logo.png", 
+  FAVICON: "/assets/images/favicon.png",
   
-  // Hero Floating Elements (Isolated PNGs recommended)
-  DRAGON_FRUIT: "assets/images/dragonfruit.png",
-  MANGO: "assets/images/mango.png",
-  LIME: "assets/images/lime.png",
-  BERRY: "assets/images/berry.png",
-  LITCHI: "assets/images/litchi.png",
-  PASSION: "assets/images/passionfruit.png",
+  // Hero Floating Elements
+  DRAGON_FRUIT: "/assets/images/dragonfruit.png",
+  MANGO: "/assets/images/mango.png",
+  LIME: "/assets/images/lime.png",
+  BERRY: "/assets/images/cherry.png", 
+  LITCHI: "/assets/images/litchi.png",
+  PASSION: "/assets/images/passionfruit.png",
   
-  // Catalog / Showcase Images (High-res photography)
-  CATALOG_DRAGON: "assets/images/catalog-dragon.jpg",
-  CATALOG_MANGO: "assets/images/catalog-mango.jpg",
-  CATALOG_BOX: "assets/images/catalog-box.jpg",
-  CATALOG_YELLOW_PITAYA: "assets/images/catalog-yellow-pitaya.jpg",
+  // Catalog / Showcase Images
+  CATALOG_DRAGON: "/assets/images/catalog-dragon.jpg",
+  CATALOG_MANGO: "/assets/images/catalog-mango..jpg", // Double dot per user screenshot
+  CATALOG_BOX: "/assets/images/catalog-box.jpg",
+  CATALOG_YELLOW_PITAYA: "/assets/images/catalog-yellow-pitaya.jpg",
   
   // Fresh Bar Images
-  SMOOTHIE_DRAGON: "assets/images/smoothie-dragon.jpg",
-  SMOOTHIE_MANGO: "assets/images/smoothie-mango.jpg",
-  SMOOTHIE_LIME: "assets/images/smoothie-lime.jpg",
-  SMOOTHIE_BERRY: "assets/images/smoothie-berry.jpg",
+  SMOOTHIE_DRAGON: "/assets/images/smoothie-dragon.jpg",
+  SMOOTHIE_MANGO: "/assets/images/smoothie-mango.jpg",
+  SMOOTHIE_LIME: "/assets/images/smoothie-lime.jpg",
+  SMOOTHIE_BERRY: "/assets/images/smoothie-berry.jpg",
 };
 
 export const PLACEHOLDERS = {
@@ -47,8 +47,8 @@ export const PLACEHOLDERS = {
   EMAIL: "hello@frootamarket.hr",
   INSTAGRAM_URL: "https://instagram.com/frootamarket",
   TIKTOK_URL: "#",
-  WOLT_URL: "#",
-  GLOVO_URL: "#",
+  WOLT_URL: "https://wolt.com",
+  GLOVO_URL: "https://glovoapp.com",
   WORKING_HOURS: "Pon-Sub 08:00–20:00 • Ned 09:00–14:00",
   MAP_EMBED: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2781.567366367389!2d15.9525673!3d45.7998673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d6c2912443e1%3A0x2e04374528189569!2sOzaljska%20ul.%2083%2C%2010000%2C%20Zagreb!5e0!3m2!1sen!2shr!4v1709999999999!5m2!1sen!2shr"
 };
@@ -88,7 +88,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '3',
     name: "Exotic Tasting Box",
-    description: "A selection of pre-sliced Pitaya, Mango, and Litchi clusters.",
+    description: "A premium selection of pre-sliced Pitaya, Mango, and Litchi clusters.",
     price: "€18.50",
     image: ASSETS.CATALOG_BOX,
     category: 'platters',
